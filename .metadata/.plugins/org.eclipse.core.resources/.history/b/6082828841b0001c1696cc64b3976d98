@@ -1,0 +1,62 @@
+package com.xxxx.servlet;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Servlet01
+ */
+@WebServlet("/Servlet01")
+public class Servlet01 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public Servlet01() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//常用方法
+		//獲取請求時的完整路徑(http:開始，到?前面結束)
+		String url = request.getRequestURI();
+		System.out.println("獲取請求時的完整路徑 :" +url);
+		//獲取請求時的部分路徑(從項目的站點名開始，到?前面結束)
+		String uri =request.getRequestURI();
+		System.out.println("獲取請求時的部分路徑 :" +url);
+		//獲取請求時的參數字符串(從?開始，到最後的字符串)
+		String queryString =request.getQueryString();
+		System.out.println("獲取請求時的參數字符串" + queryString);
+		//獲取請求方式(Get,Post)
+		String method = request.getMethod();
+		System.out.println("獲取請求方式:" +method);
+		//獲取協議版本(http1.1)
+		String protocal = request.getProtocol();
+		System.out.println("獲取當前協議版本:" +protocal);
+		//獲取項目的站點名(項目對外訪問路徑)
+		String webapp = request.getContextPath();
+		System.out.println("獲取項目的站點名: "+webapp);
+		
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

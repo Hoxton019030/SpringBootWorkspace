@@ -1,0 +1,17 @@
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class SpringBootHelloWorld {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	@RequestMapping("/")
+	public String hello() {
+		return "Hey,Spring Boot的Hello World!";
+	}
+	
+
+}

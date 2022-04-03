@@ -1,0 +1,5 @@
+1648860762395	Rename resource 'uploader.html'
+1648866968901	Extract local variable 'scan'
+1648868265753	Extract local variable 'part'
+1648868295635	Extract local variable 'fileName'
+1648868391492	Extract local variable 'filePath'
